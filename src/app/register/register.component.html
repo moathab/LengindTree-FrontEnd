@@ -1,0 +1,23 @@
+<h3> Register </h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <form action="" (submit)="register(f)" #f="ngForm">
+        <input type="username" placeholder="Enter username" ngModel name="username">
+        <input type="password" placeholder="Enter password" ngModel name="password">
+        <input type="text" placeholder="First name" ngModel name="firstName">
+        <input type="text" placeholder="Last name" ngModel name="lastName">
+        <input type="text" placeholder="Email" ngModel name="email">
+        <input type="text" placeholder="Address" ngModel name="address">
+        <input type="number" placeholder="Phone number" ngModel name="number">
+
+        <div class="form-group">
+          <button class="btn btn-primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

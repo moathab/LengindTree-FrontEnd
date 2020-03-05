@@ -4,24 +4,41 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import {RouterModule, Routes} from '@angular/router';
+import { HomeComponent } from './customerComponents/CustomerHome/home.component';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 
-const routes: Routes = [
-  {path:'', component: LoginComponent},
-  {path: 'home' , component: HomeComponent}
-]
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule, routingComponents} from './app-router.component';
+import { StartupComponent } from './startup/startup.component';
+import { RegisterComponent } from './register/register.component';
+import { CustloansComponent } from './customerComponents/custLoansComponents/custloans.component';
+import { CustprofileComponent } from './customerComponents/custprofile/custprofile.component';
+import {custLoanAndProfile} from './Service/CustomerService/custLoanAndProfile';
+import {ProfileUpdateComponent} from './customerComponents/custprofile/profileUpdate/profileUpdate.component';
+import { AdminHomeComponent} from './adminComponents/admin-home/admin-home.component';
+import { adminApi} from './Service/AdminService/adminApi';
+import { commonApi} from './Service/CommonService/commonApi';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    routingComponents,
+    StartupComponent,
+    RegisterComponent,
+    CustloansComponent,
+    CustprofileComponent,
+    ProfileUpdateComponent,
+    AdminHomeComponent
   ],
   imports: [
-    BrowserModule, FormsModule, RouterModule.forRoot(routes)
+    BrowserModule, FormsModule, HttpClientModule, RouterModule, AppRoutingModule,
   ],
-  providers: [],
+  providers: [HttpClient, custLoanAndProfile, adminApi, commonApi],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
+
