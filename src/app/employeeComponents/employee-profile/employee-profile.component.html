@@ -1,0 +1,32 @@
+<app-employee-navbar></app-employee-navbar>
+
+<div class="page">
+  <label class="field a-field a-field_a1">
+    <label> First Name</label>
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="firstName">
+
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <label> Last Name</label>
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="lastName">
+
+  </label>
+
+
+  <label class="field a-field a-field_a1">
+    <label> Email</label>
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="email">
+
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <label> Number</label>
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="number">
+  </label>
+<div> <br/></div>
+  <nav>
+    <a (click)="updateEmployeeInfo()"> Update Profile</a>
+  </nav>
+
+</div>

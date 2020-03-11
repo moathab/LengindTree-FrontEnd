@@ -36,29 +36,34 @@ export class CustprofileComponent implements OnInit {
   }
 
 
-  updateProfile(form: NgForm){
+  updateProfile(){
     let customerUser={
-      firstName: form.value.firstName,
-      lastName: form.value.lastName,
-      email: form.value.email,
-      address: form.value.address,
-      number: form.value.number,
+      firstName: this.firstname,
+      lastName: this.lastname,
+      email: this.email,
+      address: this.address,
+      number: this.number,
       custId: this.customerid
 
     }
 
     this.api.updateInfo(customerUser).subscribe(
       (res)=> {
+        alert("Profile successfully updated")
         localStorage.setItem('firstName', res.firstName)
         localStorage.setItem('lastName', res.lastName)
         localStorage.setItem('email', res.email)
         localStorage.setItem('address', res.address)
         localStorage.setItem('number', res.number)
         this.router.navigate(['customer/profile']);
+      },
+      error => {
+        alert("Error updating profile")
       }
 
     )
   }
+
 
 
 }

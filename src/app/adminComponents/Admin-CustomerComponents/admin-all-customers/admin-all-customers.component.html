@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+
+<div class="container">
+  <h2>Customers</h2>
+  <label type="text"> Search Keyword:</label>
+  <input type="text" [(ngModel)]="term">
+  <div><br/></div>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Cust ID</div>
+      <div class="col col-2">Customer Name</div>
+<!--      <div class="col col-3">Department ID</div>-->
+      <div class="col col-4" >Number</div>
+      <div class="col col-5">Email</div>
+      <div class="col col-6">Address</div>
+      <div class="col col-7" size="small"></div>
+    </li>
+
+
+    <li class="table-row" *ngFor="let customer of customers |filter:term">
+
+      <div class="col col-1" data-label="Customer ID">{{customer.custId}}</div>
+
+      <div class="col col-2" data-label="Customer Name">
+        <input class="inp inp1" [(ngModel)]="customer.firstName" name="firstName" size="10">
+        <br>
+        <input class="inp" [(ngModel)]="customer.lastName" name="lastName" size="10">
+      </div>
+
+
+      <div class="col col-4" data-label="Number" align="center">
+        <input class="inp" [(ngModel)]="customer.number" name="lastName" size="10">
+      </div>
+
+      <div class="col col-5" data-label="Email" align="center">
+        <input class="inp" [(ngModel)]="customer.email" name="email" size="17">
+      </div>
+
+      <div class="col col-6" data-label="Address" align="center">
+        <input class="inp" [(ngModel)]="customer.address" name="address" size="17">
+      </div>
+
+      <div class ="col col-7" data-label="Update Employee Info">
+        <nav>
+          <a (click)="updateCustomer(customer)"> Update Information</a>
+        </nav>
+      </div>
+    </li>
+
+  </ul>
+</div>

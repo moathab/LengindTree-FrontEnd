@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+
+<div class="page">
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="firstName">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">First Name</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="lastName">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Last Name</span>
+    </span>
+  </label>
+
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="email">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Email</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="number">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Phone Number</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="username">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Username</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input type="password" class="field__input a-field__input" placeholder="" required [(ngModel)]="password">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Password</span>
+    </span>
+  </label>
+
+  <div class="selectdiv">
+    <label>
+      <select [(ngModel)]="department" >
+        <option selected>Department</option>
+        <option *ngFor="let department1 of departments">
+          {{department1.name}}
+        </option>
+      </select>
+    </label>
+  </div>
+  <div><br/></div>
+  <div><br/></div>
+  <nav>
+    <a (click)="registerEmployee()"> Register!</a>
+  </nav>
+
+</div>

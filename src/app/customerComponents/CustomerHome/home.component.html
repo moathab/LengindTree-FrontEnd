@@ -1,24 +1,40 @@
-<!DOCTYPE html>
+<app-customernavbar></app-customernavbar>
+
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Navbar</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="home.component.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 </head>
+<body>
+<div class="container">
 
-<header>
-  <img class="logo" src="assets/lendingTreeLogo.png" alt="logo">
-  <nav>
-    <ul class="nav__links">
-      <li><a href="customer/loans">Loans</a></li>
-      <li><a href="customer/profile">Profile</a></li>
-    </ul>
-  </nav>
-  <a class="cta" href="#">Contact</a>
-  <p onclick="openNav()" class="menu cta">Menu</p>
-</header>
+  <div class="card">
+    <a href="customer/loans">
+      <h3 class="title">Loans</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <circle class="stroke" cx="60" cy="60" r="50"/>
+        </svg>
+      </div>
+    </a>
+  </div>
 
-
+  <div class="card">
+    <a href="customer/profile">
+      <h3 class="title">Profile</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <circle class="stroke" cx="60" cy="60" r="50"/>
+        </svg>
+      </div>
+    </a>
+  </div>
+</div>
+</body>

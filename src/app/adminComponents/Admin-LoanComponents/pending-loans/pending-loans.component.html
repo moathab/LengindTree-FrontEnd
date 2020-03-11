@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <h2>All Pending Loans</h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Loan Amount</div>
+      <div class="col col-2">Customer Name</div>
+      <div class="col col-3">Loan Type</div>
+      <div class="col col-4">Date Applied</div>
+      <div class="col col-5">Loan Status</div>
+      <div class="col col-6"></div>
+      <div class="col col-7"></div>
+    </li>
+
+    <li class="table-row" *ngFor="let loan of loans">
+      <div class="col col-1" data-label="Loan Amount">{{loan.amount}}</div>
+      <div class="col col-2" data-label="Customer Name">{{loan.customer.firstName + " " + loan.customer.lastName}}</div>
+      <div class="col col-3" data-label="Loan Type">{{loan.loanType.type}}</div>
+      <div class="col col-3" data-label="Date Applied">{{loan.initialDate}}</div>
+      <div class="col col-4" data-label="Loan Status">{{loan.status}}</div>
+      <div class="col col-6" data-label="Assign" size="small">
+        <nav>
+          <a (click)="assignLoan(loan)"> Assign pickup</a>
+        </nav>
+      </div>
+      <div class="col col-7" data-label="reject" size="small">
+        <nav>
+          <a (click)="removeLoan(loan)"> Remove Loan</a>
+        </nav>
+      </div>
+    </li>
+
+  </ul>
+</div>

@@ -1,23 +1,58 @@
 <h3> Register </h3>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-1">
-      <form action="" (submit)="register(f)" #f="ngForm">
-        <input type="username" placeholder="Enter username" ngModel name="username">
-        <input type="password" placeholder="Enter password" ngModel name="password">
-        <input type="text" placeholder="First name" ngModel name="firstName">
-        <input type="text" placeholder="Last name" ngModel name="lastName">
-        <input type="text" placeholder="Email" ngModel name="email">
-        <input type="text" placeholder="Address" ngModel name="address">
-        <input type="number" placeholder="Phone number" ngModel name="number">
 
-        <div class="form-group">
-          <button class="btn btn-primary">Register</button>
-        </div>
-      </form>
-    </div>
-  </div>
+<div class="page">
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="firstName">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">First Name</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="lastName">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Last Name</span>
+    </span>
+  </label>
+
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="email">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Email</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="number">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Phone Number</span>
+    </span>
+  </label>
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="address">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Address</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="" required [(ngModel)]="username">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Username</span>
+    </span>
+  </label>
+
+  <label class="field a-field a-field_a1">
+    <input type="password"class="field__input a-field__input" placeholder="" required [(ngModel)]="password">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Password</span>
+    </span>
+  </label>
+  <div><br/></div>
+  <div><br/></div>
+  <nav>
+    <a (click)="register()"> Register</a>
+  </nav>
 </div>
-
-

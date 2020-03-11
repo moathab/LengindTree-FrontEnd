@@ -1,0 +1,39 @@
+<app-customernavbar></app-customernavbar>
+<title> Apply for a loan</title>
+<div class="page">
+  <label class="field a-field a-field_a1">
+    <input class="field__input a-field__input" placeholder="e.g. 45000" required [(ngModel)]="selectedLoanAmount">
+    <span class="a-field__label-wrap">
+      <span class="a-field__label">Loan Amount</span>
+    </span>
+  </label>
+<div>
+  <br/>
+</div>
+  <div class="selectdiv">
+    <label>
+      <select [(ngModel)]="selectedBankOption" >
+        <option selected>Bank</option>
+        <option *ngFor="let bank of banks">
+          {{bank.name}}
+        </option>
+      </select>
+    </label>
+  </div>
+<div><br/></div>
+  <div class="selectdiv">
+    <label>
+      <select [(ngModel)]="selectedTypeOption">
+        <option selected > Loan Type </option>
+        <option *ngFor="let type of types">
+         {{type.type}}
+        </option>
+      </select>
+    </label>
+  </div>
+  <br/>
+  <button  (click)="addLoan()"> Apply for Loan</button>
+</div>
+
+
+

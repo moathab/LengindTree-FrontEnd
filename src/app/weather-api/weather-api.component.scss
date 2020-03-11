@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+$morro: #aacbe6;
+$cayucos: #9cd0ff;
+$bahamas: #3cc0fe;
+$capetown: #27a5fd;
+$cabo: #0066ff;
+$reynisfjara: #34373e;
+$svalbard: #d2e9fa;
+
+$bahamasAlpha: rgba($bahamas, 0.7);
+$caboAlpha: rgba($cabo, 0.6);
+
+$capetownShadow: rgba($capetown, 0.4);
+
+$widgetHeight: 400px;
+$pictoBackdropDiameter: $widgetHeight * 1.4;
+$pictoFrameDiameter: $pictoBackdropDiameter * .6;
+$pictoCloudBigDiameter: $pictoFrameDiameter * .65;
+$pictoCloudSmallDiameter: $pictoCloudBigDiameter * .7;
+$pictoCloudFillSize: $pictoCloudSmallDiameter * .7;
+$iconCloudBigDiameter: 36px;
+$iconCloudSmallDiameter: $iconCloudBigDiameter * .65;
+$iconCloudFillSize: $iconCloudSmallDiameter * .7;
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+
+}
+
+body {
+  background: #CEF;
+}
+
+
+
+
+.widget {
+  background: linear-gradient(to bottom right, $bahamas 20%, $cabo);
+  width: 150px;
+  height: 100px;
+  border-radius: 6px;
+  box-shadow: 0px 60px 80px -20px $capetownShadow;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  margin-right: 200px;
+}
+
+
+.iconCloudBig {
+  position: absolute;
+  border-radius: 50%;
+  background: $cayucos;
+  height: $iconCloudBigDiameter;
+  width: $iconCloudBigDiameter;
+  top: 200px;
+  left: 80px;
+}
+.iconCloudSmall {
+  position: absolute;
+  border-radius: 50%;
+  height: $iconCloudSmallDiameter;
+  width: $iconCloudSmallDiameter;
+  background: $svalbard;
+  top: 213px;
+  left: 70px;
+}
+.iconCloudFill {
+  position: absolute;
+  height: $iconCloudFillSize;
+  width: $iconCloudFillSize;
+  background: $cayucos;
+  top: 220px;
+  left: 80px;
+}
+
+.details{
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+.city{
+  color: white;
+  font-weight: 300;
+  font-size: 1.0em;
+  margin-left: -50px;
+  margin-top: -20px;
+}
+.temperature {
+  color: white;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin-left: -15px;
+  margin-top: 1px;
+}
+.summary {
+  color: $svalbard;
+  font-size: 1em;
+  font-weight: 300;
+  width: 80px;
+  margin-top: -10px;
+  padding-bottom: 16px;
+
+
+}
+.summaryText {
+
+  margin-left: -15px;
+  margin-top: 10px;
+
+}
+.precipitation, .wind {
+  color: $svalbard;
+  font-size: 1.0em;
+  font-weight: 300;
+  margin-left: -50px;
+}
+.precipitation {
+  margin-top: 16px;
+}
+.wind {
+  margin-top: 4px;
+}

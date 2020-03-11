@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Loan} from '../../DtoModels';
+import {Bank, Loan} from '../../DtoModels';
 
 
 @Injectable()
@@ -29,7 +29,8 @@ export class custLoanAndProfile {
 
   getLoans(): Observable<any>{
     const header = new HttpHeaders({Authorization: ("Bearer " + localStorage.getItem("token"))})
-    return this.httpClient.get<Loan[]>("http://localhost:8080/api/customer/viewAllLoans",{headers: header, params: new HttpParams().set('id', localStorage.getItem('custId'))} );
+    return this.httpClient.get<Loan[]>("http://localhost:8080/api/customer/viewAllLoans",{
+      headers: header, params: new HttpParams().set('id', localStorage.getItem('custId'))} );
   }
 
   addLoan(Loan): Observable<any>{
@@ -43,7 +44,7 @@ export class custLoanAndProfile {
 
   updateInfo(customerUser): Observable<any>{
     const header = new HttpHeaders({Authorization: ("Bearer " + localStorage.getItem("token"))})
-    return this.httpClient.put("http://localhost:8080/api/customer/updateCustomerInfo",Loan,
+    return this.httpClient.put("http://localhost:8080/api/customer/updateCustomerInfo",{},
       {headers:header,
                 params: new HttpParams()
                         .set('custId', customerUser.custId)
@@ -52,5 +53,16 @@ export class custLoanAndProfile {
                         .set('email', customerUser.email)
                         .set('address', customerUser.address)
                         .set('number', customerUser.number)} )
+  }
+
+  getBanks(): Observable<any>{
+    const header = new HttpHeaders({Authorization: ("Bearer " + localStorage.getItem("token"))})
+    return this.httpClient.get<Bank[]>("http://localhost:8080/api/customer/viewAllBanks",{
+      headers: header} );
+  }
+  getLoanTypes(): Observable<any>{
+    const header = new HttpHeaders({Authorization: ("Bearer " + localStorage.getItem("token"))})
+    return this.httpClient.get<Bank[]>("http://localhost:8080/api/customer/viewLoanTypes",{
+      headers: header} );
   }
 }
